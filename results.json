@@ -6,10 +6,10 @@
     "fullyParallel": false,
     "globalSetup": null,
     "globalTeardown": null,
-    "globalTimeout": 3600000,
+    "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
       "actualWorkers": 1
     },
@@ -54,14 +54,14 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 45000
+        "timeout": 0
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.54.1",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -77,7 +77,7 @@
           "tags": [],
           "tests": [
             {
-              "timeout": 45000,
+              "timeout": 0,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "Google Chrome",
@@ -86,29 +86,32 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "timedOut",
-                  "duration": 46661,
+                  "status": "failed",
+                  "duration": 177732,
                   "error": {
-                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
-                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Dashboard' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Dashboard' })\u001b[22m\n",
+                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Dashboard' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Dashboard' })\u001b[22m\n\n    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:14:66",
+                    "location": {
+                      "file": "D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js",
+                      "column": 66,
+                      "line": 14
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m   \u001b[90m//Verification \u001b[39m\n \u001b[90m 13 |\u001b[39m   \u001b[90m//Assertions \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Dashboard'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[90m// 5 sec \u001b[39m\n \u001b[90m    |\u001b[39m                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'/web/index.php/dashboard/index'\u001b[39m)\n \u001b[90m 17 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
-                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
-                    },
-                    {
                       "location": {
                         "file": "D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js",
-                        "column": 57,
-                        "line": 8
+                        "column": 66,
+                        "line": 14
                       },
-                      "message": "Error: locator.fill: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Username' })\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/web/index.php/auth/login'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Username'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'Admin'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Password'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'admin123'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Login'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\u001b[0m\n\u001b[2m    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:8:57\u001b[22m"
+                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Dashboard' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Dashboard' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 12 |\u001b[39m   \u001b[90m//Verification \u001b[39m\n \u001b[90m 13 |\u001b[39m   \u001b[90m//Assertions \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Dashboard'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[90m// 5 sec \u001b[39m\n \u001b[90m    |\u001b[39m                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'/web/index.php/dashboard/index'\u001b[39m)\n \u001b[90m 17 |\u001b[39m\u001b[0m\n\u001b[2m    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:14:66\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-07-25T04:00:54.257Z",
+                  "startTime": "2025-07-28T03:08:59.527Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -131,49 +134,47 @@
                       "contentType": "application/zip",
                       "path": "D:\\LearnPlaywrightB30\\test-results\\addjobtitle-Verify-Add-Job-title-Google-Chrome\\trace.zip"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js",
+                    "column": 66,
+                    "line": 14
+                  }
                 },
                 {
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "interrupted",
-                  "duration": 43949,
+                  "duration": 6268,
                   "error": {
-                    "message": "Error: locator.fill: Test ended.\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Username' })\u001b[22m\n",
-                    "stack": "Error: locator.fill: Test ended.\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Username' })\u001b[22m\n\n    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:8:57",
+                    "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\", waiting until \"load\"\u001b[22m\n\n    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:7:14",
                     "location": {
                       "file": "D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js",
-                      "column": 57,
-                      "line": 8
+                      "column": 14,
+                      "line": 7
                     },
-                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/web/index.php/auth/login'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Username'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'Admin'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Password'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'admin123'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Login'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m test(\u001b[32m'Verify Add Job title'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  6 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/web/index.php/auth/login'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Username'\u001b[39m })\u001b[33m.\u001b[39mfill(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mAPP_USERNAME\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Password'\u001b[39m })\u001b[33m.\u001b[39mfill(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mAPP_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Login'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js",
-                        "column": 57,
-                        "line": 8
+                        "column": 14,
+                        "line": 7
                       },
-                      "message": "Error: locator.fill: Test ended.\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Username' })\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/web/index.php/auth/login'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Username'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'Admin'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Password'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'admin123'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Login'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\u001b[0m\n\u001b[2m    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:8:57\u001b[22m"
+                      "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  5 |\u001b[39m test(\u001b[32m'Verify Add Job title'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  6 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/web/index.php/auth/login'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Username'\u001b[39m })\u001b[33m.\u001b[39mfill(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mAPP_USERNAME\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Password'\u001b[39m })\u001b[33m.\u001b[39mfill(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mAPP_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Login'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js:7:14\u001b[22m"
+                    },
+                    {
+                      "message": "Error: browserContext._wrapApiCall: Target page, context or browser has been closed"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2025-07-25T04:01:43.676Z",
+                  "startTime": "2025-07-28T03:11:59.634Z",
                   "annotations": [],
                   "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "D:\\LearnPlaywrightB30\\test-results\\addjobtitle-Verify-Add-Job-title-Google-Chrome-retry1\\test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "D:\\LearnPlaywrightB30\\test-results\\addjobtitle-Verify-Add-Job-title-Google-Chrome-retry1\\video.webm"
-                    },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
@@ -182,8 +183,8 @@
                   ],
                   "errorLocation": {
                     "file": "D:\\LearnPlaywrightB30\\tests\\addjobtitle.spec.js",
-                    "column": 57,
-                    "line": 8
+                    "column": 14,
+                    "line": 7
                   }
                 }
               ],
@@ -198,10 +199,14 @@
       ]
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
   "stats": {
-    "startTime": "2025-07-25T04:00:52.853Z",
-    "duration": 95715.023,
+    "startTime": "2025-07-28T03:08:58.427Z",
+    "duration": 187981.4,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
