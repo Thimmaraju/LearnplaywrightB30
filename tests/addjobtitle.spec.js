@@ -4,6 +4,8 @@ import jobtitledata from "../testData/addjobtitle.json"
 
 test('Verify Add Job title', async ({ page }) => {
 
+  const  x= "ViJay"
+
   await page.goto('/web/index.php/auth/login');
   await page.getByRole('textbox', { name: 'Username' }).fill(process.env.APP_USERNAME);
   await page.getByRole('textbox', { name: 'Password' }).fill(process.env.APP_PASSWORD);

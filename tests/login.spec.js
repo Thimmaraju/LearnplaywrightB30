@@ -3,12 +3,15 @@ import logindata from "../testData/login.json"
 
 test('Verify login with Valid Credentials', async ({ page }) => {
 
+  var username = "Admin"
+  var password = "admin123"
+
     //actions 
   await page.goto('/web/index.php/auth/login');
   await page.getByRole('textbox', { name: 'Username' }).click(); // 30 sec 
-  await page.getByRole('textbox', { name: 'Username' }).fill(logindata.username);
+  await page.getByRole('textbox', { name: 'Username' }).fill(username);
   await page.getByRole('textbox', { name: 'Password' }).click();
-  await page.getByRole('textbox', { name: 'Password' }).fill(logindata.password);
+  await page.getByRole('textbox', { name: 'Password' }).fill(password);
   await page.getByRole('button', { name: 'Login' }).click();
 
   //Verification 
@@ -32,11 +35,13 @@ test('Verify Login with Valid Username and Invalid Password', async ({ page }) =
 });
 
 test('Verify Login with Invalid Username and valid Password', async ({ page }) => {
+
+  let password = "admin"
   await page.goto('/web/index.php/auth/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('dfskhkjhrn');
   await page.getByRole('textbox', { name: 'Password' }).click();
-  await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
+  await page.getByRole('textbox', { name: 'Password' }).fill(password);
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page.getByText('Invalid credentials')).toBeVisible();
 });
@@ -47,7 +52,7 @@ test('Verify Login with Invalid Username and Invalid Password', async ({ page })
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('dfskhkjhrn');
   await page.getByRole('textbox', { name: 'Password' }).click();
-  await page.getByRole('textbox', { name: 'Password' }).fill('grkher');
+  await page.getByRole('textbox', { name: 'Password' }).fill(password);
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page.getByText('Invalid credentials')).toBeVisible();
 });

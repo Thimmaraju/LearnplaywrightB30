@@ -42,6 +42,7 @@ export default defineConfig({
     trace: "on",
     screenshot : "on",
     video: "on",
+    testIdAttribute : "aria-label"
   
   },
 

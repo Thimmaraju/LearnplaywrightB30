@@ -12,9 +12,19 @@ test('Verify Add reddif account', async ({ page }) => {
 
     await page.locator("//span[@id='toggle-password']").click()
 
-    await page.locator('//input[@id="newpasswd"]').pressSequentially(data.password)
+    await page.getByRole("")
 
-    await page.locator('//input[@id="newpasswd1"]').pressSequentially(data.password)
+    // async function Typeatext(where, what){
+
+    //    await page.locator("//input[@id="+where+"]'").pressSequentially(what)
+    // }
+
+   
+    // await Typeatext("newpasswd", data,password)
+    // await Typeatext("newpasswd1", data.password)
+
+    await page.locator('//input[@id="newpasswd"]').fill(data.password)
+    await page.locator('//input[@id="newpasswd1"]').fill(data.password)
 
     await page.locator('select[name^="DOB_Day"]').selectOption(data.day)
 
