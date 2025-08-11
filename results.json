@@ -1,6 +1,6 @@
 {
   "config": {
-    "configFile": "D:\\LearnPlaywrightB30\\qa.playwright.config.js",
+    "configFile": "D:\\LearnPlaywrightB30\\playwright.config.js",
     "rootDir": "D:/LearnPlaywrightB30/tests",
     "forbidOnly": false,
     "fullyParallel": false,
@@ -43,7 +43,39 @@
       {
         "outputDir": "D:/LearnPlaywrightB30/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/LearnPlaywrightB30/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "D:/LearnPlaywrightB30/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/LearnPlaywrightB30/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "D:/LearnPlaywrightB30/test-results",
+        "repeatEach": 1,
+        "retries": 1,
         "metadata": {
           "actualWorkers": 1
         },
@@ -59,9 +91,9 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "updateSourceMethod": "3way",
+    "updateSourceMethod": "patch",
     "version": "1.54.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -73,71 +105,202 @@
       "specs": [
         {
           "title": "Verify login with Valid Credentials",
-          "ok": false,
+          "ok": true,
           "tags": [],
           "tests": [
             {
               "timeout": 45000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "Google Chrome",
-              "projectName": "Google Chrome",
+              "projectId": "chromium",
+              "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 10741,
-                  "error": {
-                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Dashboard Raju' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Dashboard Raju' })\u001b[22m\n",
-                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Dashboard Raju' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Dashboard Raju' })\u001b[22m\n\n    at D:\\LearnPlaywrightB30\\tests\\login.spec.js:25:71",
-                    "location": {
-                      "file": "D:\\LearnPlaywrightB30\\tests\\login.spec.js",
-                      "column": 71,
-                      "line": 25
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 23 |\u001b[39m   \u001b[90m//Verification \u001b[39m\n \u001b[90m 24 |\u001b[39m   \u001b[90m//Assertions \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Dashboard Raju'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[90m// 5 sec \u001b[39m\n \u001b[90m    |\u001b[39m                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'/web/index.php/dashboard/index'\u001b[39m)\n \u001b[90m 28 |\u001b[39m\u001b[0m"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "D:\\LearnPlaywrightB30\\tests\\login.spec.js",
-                        "column": 71,
-                        "line": 25
-                      },
-                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Dashboard Raju' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Dashboard Raju' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 23 |\u001b[39m   \u001b[90m//Verification \u001b[39m\n \u001b[90m 24 |\u001b[39m   \u001b[90m//Assertions \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Dashboard Raju'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m \u001b[90m// 5 sec \u001b[39m\n \u001b[90m    |\u001b[39m                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'/web/index.php/dashboard/index'\u001b[39m)\n \u001b[90m 28 |\u001b[39m\u001b[0m\n\u001b[2m    at D:\\LearnPlaywrightB30\\tests\\login.spec.js:25:71\u001b[22m"
-                    }
-                  ],
+                  "status": "passed",
+                  "duration": 8550,
+                  "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-08-05T03:38:09.539Z",
+                  "startTime": "2025-08-07T05:47:27.794Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-login-with-Valid-Credentials-Google-Chrome\\test-failed-1.png"
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-login-with-Valid-Credentials-chromium\\test-finished-1.png"
                     },
                     {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-login-with-Valid-Credentials-Google-Chrome\\error-context.md"
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-login-with-Valid-Credentials-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-login-with-Valid-Credentials-chromium\\trace.zip"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "D:\\LearnPlaywrightB30\\tests\\login.spec.js",
-                    "column": 71,
-                    "line": 25
-                  }
+                  ]
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "badc1754af1944f68b2b-45f4a2b47124eab5d245",
+          "id": "badc1754af1944f68b2b-d829fff5e2e3553ff115",
           "file": "login.spec.js",
-          "line": 13,
+          "line": 11,
+          "column": 5
+        },
+        {
+          "title": "Verify Login with Valid Username and Invalid Password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-08-07T05:47:37.392Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-Valid-Username-and-Invalid-Password-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-Valid-Username-and-Invalid-Password-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-Valid-Username-and-Invalid-Password-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "badc1754af1944f68b2b-e255b3d94ff42e33505f",
+          "file": "login.spec.js",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "Verify Login with Invalid Username and valid Password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5192,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-08-07T05:47:42.650Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-Invalid-Username-and-valid-Password-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-Invalid-Username-and-valid-Password-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-Invalid-Username-and-valid-Password-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "badc1754af1944f68b2b-54d696ba987486c35594",
+          "file": "login.spec.js",
+          "line": 37,
+          "column": 5
+        },
+        {
+          "title": "Verify Login with Invalid Username and Invalid Password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5088,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-08-07T05:47:47.917Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-In-89b01-ername-and-Invalid-Password-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-In-89b01-ername-and-Invalid-Password-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\LearnPlaywrightB30\\test-results\\login-Verify-Login-with-In-89b01-ername-and-Invalid-Password-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "badc1754af1944f68b2b-28f2c6a62ead5ee751f0",
+          "file": "login.spec.js",
+          "line": 49,
           "column": 5
         }
       ]
@@ -145,11 +308,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-05T03:38:03.664Z",
-    "duration": 16851.853000000003,
-    "expected": 0,
+    "startTime": "2025-08-07T05:47:26.906Z",
+    "duration": 26552.103000000003,
+    "expected": 4,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
