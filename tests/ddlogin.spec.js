@@ -25,7 +25,18 @@ const logincreds = {
 
 }
 
-for (let user in logincreds) {
+
+const logincreds2 = [ {
+
+        username: "Raju",
+        password: "Raju@1225"
+    }, {
+
+        username: "Lingaraj",
+        password: "abc@1225"
+    }]
+
+for (let user of logincreds2) {
 
     const { username, password } = logincreds[user];
 
