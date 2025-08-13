@@ -32,7 +32,7 @@ test(`Verify Add Job title  `, async ({ page }) => {
 
   await page.locator('(//textarea[@class="oxd-textarea oxd-textarea--active oxd-textarea--resize-vertical"])[1]').fill(jobtitledata.job_description)
 
-  await page.locator('//button[@type="submit"]').click()
+  await page.locator("//button[@type='submit']").click()
 
   await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewJobTitleList')
 
