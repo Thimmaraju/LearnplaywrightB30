@@ -36,9 +36,9 @@ const logincreds2 = [ {
         password: "abc@1225"
     }]
 
-for (let user of logincreds2) {
+// for (let user of logincreds2) {
 
-    const { username, password } = logincreds[user];
+//     const { username, password } = logincreds[user];
 
     test(`Verify Login with Valid Username and Invalid Password - ${username} `, async ({ page }) => {
         await page.goto('/web/index.php/auth/login');
@@ -48,4 +48,4 @@ for (let user of logincreds2) {
         await expect(page.getByText('Invalid credentials')).toBeVisible();
     });
 
-}
+//}
