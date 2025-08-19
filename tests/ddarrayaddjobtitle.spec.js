@@ -6,7 +6,7 @@ const jobtitles = ["SDET III", "Automation QA II", "CFO II"]
 
 //jobtitles.forEach(element => {
 
-for(let element of jobtitles){
+for (let element of jobtitles) {
 
 
   test(`Verify Add Job title - ${element} `, async ({ page }) => {
@@ -35,7 +35,7 @@ for(let element of jobtitles){
     let randomchars = (Math.random() + 1).toString(36).substring(7);
     console.log(randomchars)
 
-    await page.locator('(//input[@class="oxd-input oxd-input--active"])[2]').fill(element+ randomchars)
+    await page.locator('(//input[@class="oxd-input oxd-input--active"])[2]').fill(element + randomchars)
 
     await page.locator('(//textarea[@class="oxd-textarea oxd-textarea--active oxd-textarea--resize-vertical"])[1]').fill(jobtitledata.job_description)
 
@@ -45,5 +45,5 @@ for(let element of jobtitles){
 
   })
 
-});
+};
 

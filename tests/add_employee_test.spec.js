@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { faker } = require('@faker-js/faker');
+
 
 
 test.describe('OrangeHRM Add Employee Test', () => {
@@ -30,7 +30,7 @@ const Employees  = {
 
 }
 
-for (emp in Employees){
+for (let emp in Employees){
 
       const { firstName, lastName } = Employees[emp];
 
