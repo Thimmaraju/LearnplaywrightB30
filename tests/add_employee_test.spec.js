@@ -36,7 +36,7 @@ for (let emp in Employees){
 
         test(`should add a new employee successfully - ${firstName}`, async ({ page }) => {
         // Launch URL
-        await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        await  page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         
         // Wait for the page to load and elements to be visible
         await page.waitForLoadState('networkidle');

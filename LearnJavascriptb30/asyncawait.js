@@ -20,24 +20,33 @@
 
 // // //=====================================================
 
-async function myFunction() {
-    return "Hello";
-  }
+// async function myFunction() {
+//     return "Hello";
+//   }
 
 
-// // //or
-function myFunction() {
-    return Promise.resolve("Hello");
-  }
+// // // //or
+// function myFunction() {
+//     return Promise.resolve("Hello");
+//   }
 
+
+//   async function  main(){
+
+//     const x = await myFunction()
+//     console.log(x)
+//   }
+
+
+// main()
 //===============================================
 
-const getData = async () => {
-    let y = await "Hello World";
-    console.log(y);
-}
+// const getData = async () => {
+//     let y = "Hello World";
+//     console.log(y);
+// }
 
- getData();
+//  getData();
 
 
 //=======================================================================
@@ -46,25 +55,25 @@ async function step1(value) {
     return value + 10;
   }
 
-  //Promise{ 20}
+  //Promise{ 15}
   
   async function step2(value) {
     return value + 10;
   }
 
-  //Promise{ 30}
+  //Promise{ 25}
   
   async function step3(value) {
     return value + 10;
   }
 
-//   //Promise{ 40}
+//   //Promise{ 35}
   
   async function run() {
 
-      let result1 = await step1(10);    //20
-      let result2 = await step2(result1);  //30
-      let result3 = await step3(result2); //40
+      let result1 = await step1(5);    //15
+      let result2 = await step2(result1);  //25
+      let result3 = await step3(result2); //35
       console.log("Results " + result3);
    
   }
