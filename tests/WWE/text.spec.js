@@ -4,21 +4,21 @@ test("Working with text", async ({ page }) => {
 
     await page.goto("https://www.flipkart.com/")
 
-    await expect(page.locator('//a[@aria-label="Mobiles"]/div/div/span/span')).toHaveText("Mobiles")
+//     await expect(page.locator('//a[@aria-label="Mobiles"]/div/div/span/span')).toHaveText("Mobiles")
 
-   const textvalue = await page.locator('//a[@aria-label="Mobiles"]/div/div/span/span').textContent()
+//    const textvalue = await page.locator('//a[@aria-label="Mobiles"]/div/div/span/span').textContent()
 
-   console.log(textvalue)
+//    console.log(textvalue)
 
-   const values = await page.locator('//a[@class="_1ch8e_"]/div/div/span/span').allTextContents()
+   const values = await page.locator('//a[@class="_1ch8e_"]/div/div/span/span').allInnerTexts()
 
    console.log(values)
    
    //values = ["Kilos", "Mobiles", ""]
 
-//     for(let i of values){
-//         console.log(i)
-//     }
+    for(let i of values){
+        console.log(i)
+    }
 
     // const textvalue = await page.locator('//a[@aria-label="Mobiles"]/div/div/span/span').innerText()
 
