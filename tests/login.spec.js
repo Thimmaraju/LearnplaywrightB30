@@ -10,18 +10,24 @@ const creds = {
 
 test.describe("Verify login functionality ", async () => {
 
-  test.beforeEach(async ()=>{
+  test.beforeEach(async ({ page }) => {
 
        await page.goto('/web/index.php/auth/login');
 
   })
 
   test('Verify login with Valid Credentials', async ({ page }) => {
-   test.fixme()
+  // test.fixme()
     //actions 
  
     await page.getByRole('textbox', { name: 'Username' }).fill(creds.username);
+    await page.screenshot({ path:'tests/screenshots/'+Date.now()+'username.png'})
+
     await page.getByRole('textbox', { name: 'Password' }).fill(creds.password);
+
+   await page.screenshot({ path:'tests/screenshots/'+Date.now()+'password.png'})
+
+   await page.locator('button', { name: 'Login' }).screenshot({ path: 'tests/screenshots/' +'loginbutton.png' })
     await page.getByRole('button', { name: 'Login' }).click();
 
     //Verification 
@@ -30,6 +36,10 @@ test.describe("Verify login functionality ", async () => {
 
     await expect(page).toHaveURL('/web/index.php/dashboard/index')
 
+    //(//div[@class="emp-distrib-chart"]/div/canvas)[2]
+  await page.waitForSelector('(//div[@class="emp-distrib-chart"]/div/canvas)[2]');
+  
+  await page.locator('(//div[@class="emp-distrib-chart"]/div/canvas)[2]').screenshot({ path: 'tests/screenshots/' +'pichart.png' })
     await expect(page.locator('ul.oxd-main-menu')).toBeVisible() // Menut  Items 
   });
 

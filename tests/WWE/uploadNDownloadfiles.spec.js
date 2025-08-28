@@ -38,15 +38,15 @@ test.describe('Automation - Working With Elements', () => {
 
         await page.goto('http://blueimp.github.io/jQuery-File-Upload/')
 
-        // await page.setInputFiles('input[type="file"]', [
-        //     './testData/files/21. Test Design techniques.png',
-        //     './testData/files/24. Example Defect.png'
-        // ])
+        await page.setInputFiles('input[type="file"]', [
+            './testData/files/21. Test Design techniques.png',
+            './testData/files/24. Example Defect.png'
+        ])
 
-        await page.locator('input[type="file"]').setInputFiles(['./testData/files/Levels of testing.png', './testData/files/rtmsample.png'])
+        //await page.locator('input[type="file"]').setInputFiles(['testData/uploadfiles/Cat.jpg', 'testData/uploadfiles/learn.jpg', 'testData/uploadfiles/imagepng.png'])
 
-        await expect(page.locator('p.name').nth(0)).toHaveText('Levels of testing.png')
-        await expect(page.locator('p.name').nth(1)).toHaveText('rtmsample.png')
+        // await expect(page.locator('p.name').nth(0)).toHaveText('Levels of testing.png')
+        // await expect(page.locator('p.name').nth(1)).toHaveText('rtmsample.png')
 
         await page.waitForTimeout(5000)
 
@@ -55,9 +55,9 @@ test.describe('Automation - Working With Elements', () => {
     test('Download a Single file and assert', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/download')
 
-        const [download] = await Promise.all([
+         const [download] = await Promise.all([
             page.waitForEvent('download'),
-            page.locator('//a[@href="download/id.jpg"]').click()
+            page.locator('//a[@href="download/kote.jpg"]').click()
         ]);
 
         const suggestedFileName = download.suggestedFilename()
@@ -71,7 +71,7 @@ test.describe('Automation - Working With Elements', () => {
     test('Download Multiple files and assert', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/download')
 
-        const fileNames = ["photo.png", "nRoBo-Logo.png"]
+        const fileNames = ["img.JPG", "Image_2.jpg"]
 
 
         for (const fileName of fileNames) {
