@@ -8,11 +8,13 @@ test('scroll to specific element', async ({ page }) => {
 
     // await dJanagoMovieLink.scrollIntoViewIfNeeded();
 
-    //await page.locator("//h3[contains(text(),'129. Hamilton')]").scrollIntoViewIfNeeded()
+    await page.locator("//h3[contains(text(),'130. Hamilton')]").scrollIntoViewIfNeeded()
 
     //await dJanagoMovieLink.click();
 
-    await page.locator("//h3[contains(text(),'129. Hamilton')]").click()
+    await page.waitForTimeout(4000)
+
+    await page.locator("//h3[contains(text(),'130. Hamilton')]").click()
 
     expect(await page.locator('h1 span').textContent()).toEqual('Hamilton')
 

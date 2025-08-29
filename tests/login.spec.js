@@ -28,7 +28,10 @@ test.describe("Verify login functionality ", async () => {
    await page.screenshot({ path:'tests/screenshots/'+Date.now()+'password.png'})
 
    await page.locator('button', { name: 'Login' }).screenshot({ path: 'tests/screenshots/' +'loginbutton.png' })
-    await page.getByRole('button', { name: 'Login' }).click();
+
+
+    await page.getByRole('textbox', { name: 'Password' }).press('Enter')
+    //await page.getByRole('button', { name: 'Login' }).click();
 
     //Verification 
     //Assertions 

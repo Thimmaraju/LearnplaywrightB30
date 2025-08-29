@@ -14,6 +14,8 @@ test('Working with Shadow DOM2', async ({ page }) => {
     await page.goto('https://books-pwakit.appspot.com/')
     await page.locator('#input').fill('Science')
 
+    //await page.locator('#input').press("Enter")
+
     await page.keyboard.press('Enter')
 
      //await expect(page.locator('text=Science and Method')).toBeVisible()
@@ -30,7 +32,7 @@ test('Working with Shadow DOM2', async ({ page }) => {
 
      await page.goBack()
 
-//     await page.waitForTimeout(5000)
+     await page.waitForTimeout(5000)
 
      await page.goForward()
 

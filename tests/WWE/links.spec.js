@@ -16,7 +16,7 @@ test.describe('Automation - Working With Elements', () => {
 
         await page.goto('https://www.wikipedia.org/')
 
-        await expect.soft(page.locator("//a")).toHaveCount(371)
+        await expect(page.locator("//a")).toHaveCount(371)
 
          //await page.locator('[data-jsl10n="commons.name"]').click()
 
@@ -41,3 +41,7 @@ test.describe('Automation - Working With Elements', () => {
     })
 
 })
+
+// request.get("href")
+
+// 200 
