@@ -29,7 +29,7 @@ test("Check box Example", async ({ page }) => {
 })
 
 
-test.only("Check box Example -2 ", async ({ page }) => {
+test("Check box Example -2 ",{tag : "@raju"}, async ({ page }) => {
 
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
 

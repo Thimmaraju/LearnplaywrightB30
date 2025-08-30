@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 
-test.describe('GreenCart Tests', () => {
+test.describe('GreenCart Tests', {tag : "@smoke"},() => {
     test('should load GreenCart homepage', async ({ page }) => {
       
      await page.goto('https://rahulshettyacademy.com/seleniumPractise/#/')

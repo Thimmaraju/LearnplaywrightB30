@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import data from "../testData/redifaccountcreation.json"
+import data from "../../testData/redifaccountcreation.json"
 
 test('Verify Add reddif account', async ({ page }) => {
 

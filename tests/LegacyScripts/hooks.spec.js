@@ -31,7 +31,7 @@ test.describe("Verify Payment Using Diffeerent methods", async () => {
 
     })
 
-    test("Verify User can do payment with debit card ", ()=>{
+    test("Verify User can do payment with debit card ",{tag : "@smoke"}, ()=>{
 
 
         console.log("Do the Payment with debit card")

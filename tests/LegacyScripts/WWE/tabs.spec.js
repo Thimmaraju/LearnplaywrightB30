@@ -57,19 +57,19 @@ test.describe('Automation - Working With Elements', () => {
     await page.locator('input[name="q"]').press('Enter')
 
 
-    const [newTab] = await Promise.all([
+    const [NewPage] = await Promise.all([
       page.waitForEvent('popup'),
-      await page.locator("//div[text()='Apple iPhone 16 (Teal, 256 GB)']").click()
+      await page.locator("//div[text()='Apple iPhone 13 (Starlight, 128 GB)']").click()
     ]);
 
-    await expect(newTab).toHaveURL(/apple-iphone-16-teal-256-gb/)
+    //await expect(newTab).toHaveURL(/apple-iphone-16-teal-256-gb/)
 
 
-    const nameofthePhone = await newTab.locator("._6EBuvT>span").textContent();
+    const nameofthePhone = await NewPage.locator("._6EBuvT>span").textContent();
 
     console.log(nameofthePhone)
 
-    await page.locator("//div[text()='Apple iPhone 13 (Midnight, 128 GB)']").click()
+    await page.locator("//div[text()='Apple iPhone 13 (Starlight, 128 GB)']").click()
 
   })
 

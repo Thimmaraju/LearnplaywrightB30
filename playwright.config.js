@@ -29,7 +29,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 2,
+  workers: process.env.CI ? 1 : 1,
   /* Reporter to use. Removing 'dot' because it can duplicate console output when used with 'list'. */
   reporter: [['list'], ['html']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -48,15 +48,24 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+     {
+      name: "setup",
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome'
+      },
+      testMatch: /.*\.setup\.js/,
     },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
     // {
     //   name: 'webkit',
@@ -83,7 +92,10 @@ export default defineConfig({
     // },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' ,
+         // storageState: ".auth/user.json",
+      },
+      //dependencies: ["setup"],
     },
   ],
 

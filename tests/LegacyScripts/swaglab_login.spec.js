@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test("Login as Standard User swag Labs", async ({page}) =>{
+test("Login as Standard User swag Labs",{tag : "@smoke"}, async ({page}) =>{
 
     test.slow()
     await page.goto('https://www.saucedemo.com/v1/index.html')
