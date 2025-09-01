@@ -99,23 +99,27 @@ test('DELETE API', async ({ request }) => {
 
 
 test('Playwright Test Case - Understanding GET Method', async ({ request }) => {
-  const url = 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees?limit=50&offset=0&model=detailed&includeEmployees=onlyCurrent&sortField=employee.firstName&sortOrder=ASC';
+  const url = 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/admin/users?limit=50&offset=0&sortField=u.userName&sortOrder=ASC';
 
   const headers = {
-    "Cookie": "orangehrm=pah6mrg3fbj85lda2ouitm8dsf"
+    "Cookie": "orangehrm=bhk7i85qcelaiprs36lmsqrgq8"
   };
 
-  const response = await request.get(url, { headers });
+  const GetAllUsers = await request.get(url, { headers });
 
   // Verify status code
-  expect(response.status()).toBe(200);
+  expect(GetAllUsers.status()).toBe(200);
 
-  const responseBody = await response.json();
+  const responseBody = await GetAllUsers.json();
 
   console.log(responseBody)
 
   // Log the response body to the console
   console.log(responseBody);
+
+  process.env.APP_NAME = responseBody.data[0].userName
+
+  console.log(process.env.APP_NAME)
 
   // Ensure the directory exists
   const dir = "apiresponses";
@@ -124,7 +128,7 @@ test('Playwright Test Case - Understanding GET Method', async ({ request }) => {
   }
 
   // Write the response body to a file
-  fs.writeFileSync("apiresponses/AllEmployees.txt", JSON.stringify(responseBody, null, 2));
+  fs.writeFileSync("apiresponses/AllUser.txt", JSON.stringify(responseBody, null, 2));
 });
 
 
@@ -132,13 +136,13 @@ test('Playwright Test Case - Understanding DELETE Method', async ({ request }) =
   const url = '/web/index.php/api/v2/pim/employees';
 
   const headers = {
-    "Cookie": process.env.COOKIEVALUE,
+    "Cookie": process.env.APP_COOKIE,
     "Host": "opensource-demo.orangehrmlive.com",
     "Referer": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList"
   };
 
   // Define the payload for the DELETE request
-  const payload = { "ids": [155] };
+  const payload = { "ids": [128] };
 
   // Send the DELETE request with headers and the payload
   const response = await request.delete(url, { headers, data: payload });

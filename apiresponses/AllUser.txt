@@ -1,0 +1,255 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "userName": "Admin",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 7,
+        "employeeId": "muser",
+        "firstName": "manda",
+        "middleName": "akhil",
+        "lastName": "user",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 1,
+        "name": "Admin",
+        "displayName": "Admin"
+      }
+    },
+    {
+      "id": 58,
+      "userName": "aurore.fisher",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 179,
+        "employeeId": "0025",
+        "firstName": "Caleb",
+        "middleName": "",
+        "lastName": "Shields",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 1,
+        "name": "Admin",
+        "displayName": "Admin"
+      }
+    },
+    {
+      "id": 64,
+      "userName": "cortez.predovic",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 188,
+        "employeeId": "3401",
+        "firstName": "Oda",
+        "middleName": "",
+        "lastName": "Jacobson",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 61,
+      "userName": "delfina.predovic",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 183,
+        "employeeId": "5216",
+        "firstName": "Isaiah",
+        "middleName": "",
+        "lastName": "Cruickshank",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 54,
+      "userName": "FMLName",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 137,
+        "employeeId": "1234",
+        "firstName": "Qwerty",
+        "middleName": "Qwerty",
+        "lastName": "LName",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 55,
+      "userName": "FMLName1",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 157,
+        "employeeId": "1235",
+        "firstName": "FName",
+        "middleName": "Mname",
+        "lastName": "LName",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 65,
+      "userName": "gwendolyn.bernier",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 189,
+        "employeeId": "6689",
+        "firstName": "Eufemia",
+        "middleName": "",
+        "lastName": "Swift",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 56,
+      "userName": "Jobinsam@6742",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 165,
+        "employeeId": "0367010",
+        "firstName": "Jobin",
+        "middleName": "Mathew",
+        "lastName": "Sam",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 59,
+      "userName": "leo.price",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 180,
+        "employeeId": "5771",
+        "firstName": "Von",
+        "middleName": "",
+        "lastName": "Pollich",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 60,
+      "userName": "lorine.treutel",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 180,
+        "employeeId": "5771",
+        "firstName": "Von",
+        "middleName": "",
+        "lastName": "Pollich",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 1,
+        "name": "Admin",
+        "displayName": "Admin"
+      }
+    },
+    {
+      "id": 63,
+      "userName": "meghan.feest",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 186,
+        "employeeId": "9607",
+        "firstName": "Eldridge",
+        "middleName": "",
+        "lastName": "Bashirian",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 62,
+      "userName": "takako.lowe",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 185,
+        "employeeId": "3446",
+        "firstName": "Esmeralda",
+        "middleName": "",
+        "lastName": "Murphy",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    },
+    {
+      "id": 57,
+      "userName": "tamiko.kuhic",
+      "deleted": false,
+      "status": true,
+      "employee": {
+        "empNumber": 179,
+        "employeeId": "0025",
+        "firstName": "Caleb",
+        "middleName": "",
+        "lastName": "Shields",
+        "terminationId": null
+      },
+      "userRole": {
+        "id": 2,
+        "name": "ESS",
+        "displayName": "ESS"
+      }
+    }
+  ],
+  "meta": {
+    "total": 13
+  },
+  "rels": []
+}
