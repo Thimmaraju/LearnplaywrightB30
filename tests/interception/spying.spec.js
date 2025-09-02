@@ -19,10 +19,10 @@ test.describe('Verify PIM calls Spying', () => {
       request.url().includes('/api/v2/admin/subunits') &&
       request.request().method() === 'GET'
     );
-    // const rajuPromise = page.waitForResponse(request =>
-    //   request.url().includes('/raju') &&
-    //   request.request().method() === 'GET'
-    // );
+    const rajuPromise = page.waitForResponse(request =>
+      request.url().includes('/raju') &&
+      request.request().method() === 'GET'
+    );
 
     // Navigate to the app and perform login
     await page.goto('https://opensource-demo.orangehrmlive.com');
@@ -51,7 +51,7 @@ test.describe('Verify PIM calls Spying', () => {
     const empStatusResponse = await empStatusPromise;
     expect(empStatusResponse.status()).toBe(200);
 
-    // const rajuResponse = await rajuPromise;
-    // expect(rajuResponse.status()).toBe(200);
+    const rajuResponse = await rajuPromise;
+    expect(rajuResponse.status()).toBe(200);
   });
 });

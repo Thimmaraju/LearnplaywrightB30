@@ -8,21 +8,21 @@ test.describe("Verify Stubbing Get Employees API", () => {
       "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees?limit=50&offset=0&model=detailed&includeEmployees=onlyCurrent&sortField=employee.firstName&sortOrder=ASC",
       async (route) => {
         await route.fulfill({
-          status: 400,
+          status: 500,
           contentType: "application/json",
           body: JSON.stringify({
             data: [
               {
                 empNumber: 7,
-                lastName: "M",
-                firstName: "Purushottam",
+                lastName: "Harris",
+                firstName: "Sheena",
                 middleName: "ABC",
                 employeeId: "1234",
                 terminationId: null,
                 jobTitle: {
-                  id: 23,
-                  title: "HR Manager",
-                  isDeleted: false,
+                  id: null,
+                  title: null,
+                  isDeleted: null,
                 },
                 subunit: {
                   id: 13,
@@ -36,7 +36,7 @@ test.describe("Verify Stubbing Get Employees API", () => {
                   {
                     "empNumber": 170,
                     "lastName": "xyz",
-                    "firstName": "Anjali",
+                    "firstName": "Narayan",
                     "middleName": "Abc"
                 }
                 ],
