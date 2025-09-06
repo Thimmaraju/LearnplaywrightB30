@@ -24,6 +24,13 @@ exports.addEmployeePage = class addEmployeePage {
         await this.saveBtn.click()
     }
 
+      async addEmployeenew(fristname, lastname){
+
+        await this.firstanmeInput.fill(fristname)
+        await this.lastnameInput.fill(lastname)
+        await this.saveBtn.click()
+    }
+
     async addemployyeeSuccessMesage(){
 
         await expect(this.headerPersonalDetails).toBeVisible()
