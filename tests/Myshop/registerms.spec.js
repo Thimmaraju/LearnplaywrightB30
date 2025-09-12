@@ -13,14 +13,11 @@ let register;
         await register.navigatetosignup()
         await register.emailcred(msregisterdata.email);
         await register.accreatesuccessmsg();
-        await register.titleradbtn();
-        await register.firstnamedata(msregisterdata.firstname);
-        await register.lastnamedata(msregisterdata.lastname);
-        await register.passworddata(msregisterdata.password);
-        await register.daydata('5');
-        await register.monthdata('July');
-        await register.yeardata('2022')
-        await register.checkboxbtn()
+        await register.registerinput(msregisterdata.firstname,msregisterdata.lastname,msregisterdata.password)
+
+
+        await register.select(msregisterdata.day,msregisterdata.month,msregisterdata.year);
+       
         await register.registersuccessmsg()
 
 

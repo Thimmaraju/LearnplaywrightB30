@@ -36,29 +36,19 @@ exports.registerpage = class registerpage {
     async accreatesuccessmsg() {
         await expect(this.createacsucccess).toBeVisible()
     }
-    async titleradbtn() {
-        await this.titlebtn.check()
-    }
-    async firstnamedata(firstname) {
+   
+    async registerinput(firstname,lastname,password) {
+         await this.titlebtn.check()
         await this.firstnameinput.fill(firstname)
+         await this.lastnameInput.fill(lastname)
+          await this.passwordInput.fill(password)
     }
-    async lastnamedata(lastname) {
-        await this.lastnameinput.fill(lastname)
-    }
-    async passworddata(password) {
-        await this.passwordInput.fill(password)
-    }
-    async daydata(day) {
+    
+    async select(day,month,year) {
         await this.selectday.selectOption(day)
-    }
-    async monthdata(month) {
         await this.selectmonth.selectOption(month)
-    }
-    async yeardata(year) {
-        await this.selectyear.selectOption(year)
-    }
-    async checkboxbtn() {
-        await this.checkbox.check()
+         await this.selectyear.selectOption(year)
+           await this.checkbox.check()
         await this.registerbtn.click()
     }
     async registersuccessmsg() {
